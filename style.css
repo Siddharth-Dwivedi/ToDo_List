@@ -1,0 +1,145 @@
+:root{
+    --orange: #ff9c27;
+    --lightgreen : #00c78a;
+    --primarytext: #f2e8cf;
+    --bg:#162719;
+}
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f2e8cf;
+}
+header{
+    padding: 2rem 1rem;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 700px;
+}
+header h1{
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: var(--primarytext);
+    margin-bottom: 1.5rem;
+}
+#task-form{
+    display: flex;
+}
+
+#task-input::placeholder{
+    color: var(--primarytext);
+}
+input,button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#task-input{
+    flex: 1 1 0%;
+    background-color: var(--bg);
+    padding: 1rem;
+    border: 1px solid var(--primarytext);
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--primarytext);
+    font-size: 1.25rem;
+}
+
+#task-submit{
+    color: var(--primarytext);
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.4s;
+    border: 1px solid var(--primarytext);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+#task-submit:hover{
+    opacity: 0.8;
+}
+
+.container{
+    background: var(--bg);
+    flex: 0% 1 0%;
+    max-width: 750px;
+    width: 100%;
+    margin: 2rem auto;
+    border-radius: 1rem;
+}
+#task-submit:active{
+    opacity: 0.6;
+}
+main{
+    flex: 1 1 0%;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.task-list{
+    padding: 1rem;
+}
+
+#tasks .task{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--bg);
+    border: 1px solid var(--orange);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+#tasks .task .content{
+    flex: 1 1 0%;
+}
+#tasks .task .content .text{
+    color: var(--primarytext);
+    font-size: 1.13rem;
+    display: block;
+    transition: 0.4s;
+    width: 100%;
+}
+#tasks .task .content .text:not(:read-only){
+    color: var(--lightgreen);
+}
+#tasks .task .actions{
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.task .actions button{
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.4s;
+    text-transform: uppercase;
+    margin: 0 0.5rem;
+}
+.task .actions button:hover{
+    opacity: 0.8;
+}
+
+.task .actions .Delete{
+    color: crimson;
+}
+.task .actions button:active{
+    opacity: 0.6;
+}
+.task .actions .Edit{
+    color: var(--lightgreen);
+}
+.strike {
+    text-decoration: line-through;
+}
+.task .actions .Completed{
+    color: var(--orange)
+}
