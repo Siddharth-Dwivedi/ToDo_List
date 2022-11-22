@@ -1,13 +1,14 @@
 :root{
-    --orange: #ff9c27;
     --lightgreen : #00c78a;
-    --primarytext: #f2e8cf;
+    --orange: #ff9c27;
     --bg:#162719;
+    --primarytext: #f2e8cf;
 }
+
 *{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0;
     box-sizing: border-box;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 body{
     display: flex;
@@ -17,13 +18,13 @@ body{
 }
 header{
     padding: 2rem 1rem;
+    max-width: 700px;
     width: 100%;
     margin: 0 auto;
-    max-width: 700px;
 }
 header h1{
-    font-weight: 400;
     font-size: 2.5rem;
+    font-weight: 400;
     color: var(--primarytext);
     margin-bottom: 1.5rem;
 }
@@ -31,9 +32,6 @@ header h1{
     display: flex;
 }
 
-#task-input::placeholder{
-    color: var(--primarytext);
-}
 input,button{
     appearance: none;
     border: none;
@@ -51,7 +49,9 @@ input,button{
     color: var(--primarytext);
     font-size: 1.25rem;
 }
-
+#task-input::placeholder{
+    color: var(--primarytext);
+}
 #task-submit{
     color: var(--primarytext);
     font-size: 1.25rem;
@@ -62,10 +62,14 @@ input,button{
     border-radius: 1rem;
     padding: 1rem;
 }
+
 #task-submit:hover{
     opacity: 0.8;
 }
 
+#task-submit:active{
+    opacity: 0.6;
+}
 .container{
     background: var(--bg);
     flex: 0% 1 0%;
@@ -73,9 +77,6 @@ input,button{
     width: 100%;
     margin: 2rem auto;
     border-radius: 1rem;
-}
-#task-submit:active{
-    opacity: 0.6;
 }
 main{
     flex: 1 1 0%;
@@ -91,12 +92,12 @@ main{
 #tasks .task{
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
     background-color: var(--bg);
     border: 1px solid var(--orange);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    padding: 1rem;
     border-radius: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 #tasks .task .content{
     flex: 1 1 0%;
@@ -104,9 +105,9 @@ main{
 #tasks .task .content .text{
     color: var(--primarytext);
     font-size: 1.13rem;
+    width: 100%;
     display: block;
     transition: 0.4s;
-    width: 100%;
 }
 #tasks .task .content .text:not(:read-only){
     color: var(--lightgreen);
@@ -117,29 +118,29 @@ main{
 }
 
 .task .actions button{
-    font-weight: 800;
     cursor: pointer;
     font-size: 1rem;
-    transition: 0.4s;
-    text-transform: uppercase;
+    font-weight: 800;
     margin: 0 0.5rem;
+    text-transform: uppercase;
+    transition: 0.4s;
 }
 .task .actions button:hover{
     opacity: 0.8;
 }
 
-.task .actions .Delete{
-    color: crimson;
-}
 .task .actions button:active{
     opacity: 0.6;
 }
 .task .actions .Edit{
     color: var(--lightgreen);
 }
-.strike {
-    text-decoration: line-through;
+.task .actions .Delete{
+    color: crimson;
 }
 .task .actions .Completed{
     color: var(--orange)
+}
+.strike {
+    text-decoration: line-through;
 }
